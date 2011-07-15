@@ -12,8 +12,10 @@
 #   #include
 #   https://raw.github.com/couchbaselabs/cloud-init/master/membase-server-community_x86_64_1.7.0.rpm.install
 #
-PASSWORD=password
-export PASSWORD
+MEMBASE_REST_PASSWORD=password
+MEMBASE_MAX_RAM_MB_PER_SERVER=500
+MEMBASE_MAX_RAM_MB_FOR_DEFAULT_BUCKET=500
+MEMBASE_REPLICAS_FOR_DEFAULT_BUCKET=1
 
 yum -y install openssl098e
 
@@ -21,16 +23,20 @@ wget http://packages.couchbase.com/releases/1.7.0/membase-server-community_x86_6
 
 rpm -i membase-server-community*.rpm
 
+sleep 5
+
 /opt/membase/bin/membase cluster-init -c 127.0.0.1 \
   --cluster-init-username=Administrator \
-  --cluster-init-password=${PASSWORD} \
-  --cluster-init-ramsize=500
+  --cluster-init-password=${MEMBASE_REST_PASSWORD} \
+  --cluster-init-ramsize=${MEMBASE_MAX_RAM_MB_PER_SERVER}
 
 /opt/membase/bin/membase bucket-create -c 127.0.0.1 \
-  -u Administrator -p ${PASSWORD} \
+  -u Administrator -p ${MEMBASE_REST_PASSWORD} \
   --bucket=default \
   --bucket-type=membase \
   --bucket-password= \
-  --bucket-ramsize=500 \
-  --bucket-replica=1
+  --bucket-ramsize=${MEMBASE_MAX_RAM_MB_FOR_DEFAULT_BUCKET} \
+  --bucket-replica=${MEMBASE_REPLICAS_FOR_DEFAULT_BUCKET}
+
+# At this point, visit http://$HOST:8091 for the Membase web console.
 

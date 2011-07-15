@@ -12,8 +12,7 @@
 #   #include
 #   https://raw.github.com/couchbaselabs/cloud-init/master/couchbase-single-server-community_x86_64_2.0.0-dev-preview-3.rpm.install
 #
-PASSWORD=password
-export PASSWORD
+COUCHBASE_PASSWORD=password
 
 yum -y install openssl098e
 
@@ -21,7 +20,7 @@ wget http://files.couchbase.com/developer-previews/couchbase-single-server-2.0.0
 
 rpm -i couchbase-single-server-community*.rpm
 
-curl -X PUT http://127.0.0.1:5984/_config/admins/admin -d '"${PASSWORD}"'
+curl -X PUT http://127.0.0.1:5984/_config/admins/admin -d \"${COUCHBASE_PASSWORD}\"
 
 # At this point, Couchbase Single Server will be running but only
 # listening on address 127.0.0.1.  To fix this, change the
