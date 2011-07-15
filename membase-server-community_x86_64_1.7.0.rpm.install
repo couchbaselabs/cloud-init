@@ -1,0 +1,36 @@
+#!/bin/bash -ex
+
+# Install script for membase-server.
+#
+# You can use this script as a CloudInit "#include" file on Amazon EC2.
+# The Default Amazon Linux AMI, for example, is CloudInit-capapble...
+#
+#   Basic 64-bit Amazon Linux AMI 2011.02.1 Beta (AMI Id: ami-8e1fece7)
+#
+# When launching your EC2 instance, specify a UserData of...
+#
+#   #include
+#   https://raw.github.com/couchbaselabs/cloud-init/master/membase-server-community_x86_64_1.7.0.rpm.install
+#
+PASSWORD=password
+export PASSWORD
+
+yum -y install openssl098e
+
+wget http://packages.couchbase.com/releases/1.7.0/membase-server-community_x86_64_1.7.0.rpm
+
+rpm -i membase-server-community*.rpm
+
+/opt/membase/bin/membase cluster-init -c 127.0.0.1 \
+  --cluster-init-username=Administrator \
+  --cluster-init-password=${PASSWORD} \
+  --cluster-init-ramsize=500
+
+/opt/membase/bin/membase bucket-create -c 127.0.0.1 \
+  -u Administrator -p ${PASSWORD} \
+  --bucket=default \
+  --bucket-type=membase \
+  --bucket-password= \
+  --bucket-ramsize=500 \
+  --bucket-replica=1
+
