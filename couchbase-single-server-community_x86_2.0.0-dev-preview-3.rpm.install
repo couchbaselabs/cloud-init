@@ -4,7 +4,7 @@ COUCHBASE_PASSWORD=password
 
 yum -y install openssl098e
 
-wget http://files.couchbase.com/developer-previews/couchbase-single-server-2.0.0-dev-preview/couchbase-single-server-community_x86_64_2.0.0-dev-preview-3.rpm
+wget http://files.couchbase.com/developer-previews/couchbase-single-server-2.0.0-dev-preview/couchbase-single-server-community_x86_2.0.0-dev-preview-3.rpm
 
 rpm -i couchbase-single-server-community*.rpm
 

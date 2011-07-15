@@ -7,7 +7,7 @@ MEMBASE_REPLICAS_FOR_DEFAULT_BUCKET=1
 
 yum -y install openssl098e
 
-wget http://packages.couchbase.com/releases/1.7.0/membase-server-community_x86_64_1.7.0.rpm
+wget http://packages.couchbase.com/releases/1.7.0/membase-server-community_x86_1.7.0.rpm
 
 rpm -i membase-server-community*.rpm
 
