@@ -1,0 +1,8 @@
+CloudInit scripts for Couchbase software.
+
+More info...
+
+* https://help.ubuntu.com/community/CloudInit
+* http://docs.amazonwebservices.com/FeaturedArticles/latest/index.html?cloudformation-waitcondition-article.html
+* http://aws.amazon.com/articles/2944359479955804
+
