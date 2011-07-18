@@ -34,6 +34,12 @@ Or like...
 * http://docs.amazonwebservices.com/FeaturedArticles/latest/index.html?cloudformation-waitcondition-article.html
 * http://aws.amazon.com/articles/2944359479955804
 
+Also, to launch more than just single nodes and instead launch
+auto-joined, "N-pack" clusters of Membase servers, please consider the
+CloudFormation templates at...
+
+* https://github.com/couchbaselabs/cloud-formation
+
 # License
 
 * MIT - Made It Trivial for you to use.
