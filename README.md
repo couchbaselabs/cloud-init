@@ -1,8 +1,12 @@
-CloudInit scripts for Couchbase software.
+Scripts to use Couchbase software via CloudInit (cloud-init).
 
 # Important
 
-Change the passwords!  Fork this project && do the needful.
+Change the passwords!
+
+That is - fork this project, change the passwords, push to your own S3
+bucket, etc.  Or at least change them quickly after launching your
+servers.
 
 # Usage
 
@@ -30,7 +34,7 @@ Or like...
 * http://docs.amazonwebservices.com/FeaturedArticles/latest/index.html?cloudformation-waitcondition-article.html
 * http://aws.amazon.com/articles/2944359479955804
 
-= License
+# License
 
 * MIT - Made It Trivial for you to use.
 
