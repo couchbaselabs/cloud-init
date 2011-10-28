@@ -14,8 +14,8 @@ You can use these scripts with any CloudInit-compatible VM's, via the
 "#include" UserData directive.  The Default Amazon Linux AMI's on EC2,
 for example, are CloudInit-compatible...
 
-* Basic 32-bit Amazon Linux AMI 2011.02.1 Beta (AMI Id: ami-8c1fece5)
-* Basic 64-bit Amazon Linux AMI 2011.02.1 Beta (AMI Id: ami-8e1fece7)
+* Basic 32-bit Amazon Linux AMI 2011.09 (AMI Id: ami-7f418316)
+* Basic 64-bit Amazon Linux AMI 2011.09 (AMI Id: ami-7341831a)
 
 When launching your EC2 instance, merely specify a UserData of
 something like...
