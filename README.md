@@ -17,8 +17,7 @@ for example, are CloudInit-compatible...
 * Basic 32-bit Amazon Linux AMI 2011.09 (AMI Id: ami-7f418316)
 * Basic 64-bit Amazon Linux AMI 2011.09 (AMI Id: ami-7341831a)
 
-When launching your EC2 instance, merely specify a UserData of
-something like...
+When launching your EC2 instance, merely specify a UserData text of...
 
     #include
     https://raw.github.com/couchbaselabs/cloud-init/master/membase-server-community_x86_64_1.7.2.rpm.install
@@ -27,6 +26,11 @@ Or like...
 
     #include
     https://raw.github.com/couchbaselabs/cloud-init/master/couchbase-single-server-community_x86_64_2.0.0-dev-preview-3.rpm.install
+
+The script takes awhile to download the relevant packages, so please
+be patient before accessing your server at...
+
+    http://HOST:8091
 
 # More info
 
