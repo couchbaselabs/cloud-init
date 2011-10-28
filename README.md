@@ -21,7 +21,7 @@ When launching your EC2 instance, merely specify a UserData of
 something like...
 
     #include
-    https://raw.github.com/couchbaselabs/cloud-init/master/membase-server-community_x86_64_1.7.0.rpm.install
+    https://raw.github.com/couchbaselabs/cloud-init/master/membase-server-community_x86_64_1.7.2.rpm.install
 
 Or like...
 
