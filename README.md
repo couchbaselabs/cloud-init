@@ -14,18 +14,13 @@ You can use these scripts with any CloudInit-compatible VM's, via the
 "#include" UserData directive.  The Default Amazon Linux AMI's on EC2,
 for example, are CloudInit-compatible...
 
-* Basic 32-bit Amazon Linux AMI 2011.09 (AMI Id: ami-7f418316)
-* Basic 64-bit Amazon Linux AMI 2011.09 (AMI Id: ami-7341831a)
+* Basic 32-bit Amazon Linux AMI 2011.09 (AMI Id: ami-31814f58)
+* Basic 64-bit Amazon Linux AMI 2011.09 (AMI Id: ami-1b814f72)
 
 When launching your EC2 instance, merely specify a UserData text of...
 
     #include
-    https://raw.github.com/couchbaselabs/cloud-init/master/membase-server-community_x86_64_1.7.2.rpm.install
-
-Or like...
-
-    #include
-    https://raw.github.com/couchbaselabs/cloud-init/master/couchbase-single-server-community_x86_64_2.0.0-dev-preview-3.rpm.install
+    https://raw.github.com/couchbaselabs/cloud-init/master/couchbase-server-community_x86_64_1.8.0.rpm.install
 
 The script takes awhile to download the relevant packages, so please
 be patient before accessing your server at...
@@ -39,7 +34,7 @@ be patient before accessing your server at...
 * http://aws.amazon.com/articles/2944359479955804
 
 Also, to launch more than just single nodes and instead launch
-auto-joined, "N-pack" clusters of Membase servers, please consider the
+auto-joined, "N-pack" clusters of Couchbase servers, please consider the
 CloudFormation templates at...
 
 * https://github.com/couchbaselabs/cloud-formation
