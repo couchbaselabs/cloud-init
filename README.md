@@ -22,6 +22,12 @@ When launching your EC2 instance, merely specify a UserData text of...
     #include
     https://raw.github.com/couchbaselabs/cloud-init/master/couchbase-server-community_x86_64_1.8.0.rpm.install
 
+The script creates 500M bucket by default, which might exceed the system memory if you plan to use a small instance.
+In this case, change the following parameters to reflect your needs
+
+    COUCHBASE_MAX_RAM_MB_PER_SERVER=500
+    COUCHBASE_MAX_RAM_MB_FOR_DEFAULT_BUCKET=500
+
 The script takes awhile to download the relevant packages, so please
 be patient before accessing your server at...
 
