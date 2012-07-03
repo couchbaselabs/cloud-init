@@ -14,13 +14,13 @@ You can use these scripts with any CloudInit-compatible VM's, via the
 "#include" UserData directive.  The Default Amazon Linux AMI's on EC2,
 for example, are CloudInit-compatible...
 
-* Basic 32-bit Amazon Linux AMI 2011.09 (AMI Id: ami-31814f58)
+* Basic 64-bit Amazon Linux AMI 2012.03 (AMI Id: ami-aecd60c7)
 * Basic 64-bit Amazon Linux AMI 2011.09 (AMI Id: ami-1b814f72)
 
 When launching your EC2 instance, merely specify a UserData text of...
 
     #include
-    https://raw.github.com/couchbaselabs/cloud-init/master/couchbase-server-community_x86_64_1.8.0.rpm.install
+    https://raw.github.com/couchbaselabs/cloud-init/master/couchbase-server-enterprise_x86_64_1.8.1.rpm.install
 
 The script creates 500M bucket by default, which might exceed the system memory if you plan to use a small instance.
 In this case, change the following parameters to reflect your needs
