@@ -9,7 +9,7 @@ yum -y install openssl098e
 
 wget http://packages.couchbase.com/releases/1.8.1/couchbase-server-enterprise_x86_64_1.8.1.rpm
 
-rpm -i couchbase-server-community*.rpm
+rpm -i couchbase-server-*.rpm
 
 sleep 5
 
