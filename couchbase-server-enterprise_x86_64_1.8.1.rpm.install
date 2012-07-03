@@ -7,7 +7,7 @@ COUCHBASE_REPLICAS_FOR_DEFAULT_BUCKET=1
 
 yum -y install openssl098e
 
-wget http://packages.couchbase.com/releases/1.8.1/couchbase-server-community_x86_64_1.8.1.rpm
+wget http://packages.couchbase.com/releases/1.8.1/couchbase-server-enterprise_x86_64_1.8.1.rpm
 
 rpm -i couchbase-server-community*.rpm
 
