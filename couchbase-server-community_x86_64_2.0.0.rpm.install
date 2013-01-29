@@ -1,0 +1,30 @@
+#!/bin/bash -ex
+
+COUCHBASE_REST_PASSWORD=password
+COUCHBASE_MAX_RAM_MB_PER_SERVER=500
+COUCHBASE_MAX_RAM_MB_FOR_DEFAULT_BUCKET=500
+COUCHBASE_REPLICAS_FOR_DEFAULT_BUCKET=1
+
+yum -y install openssl098e
+
+wget http://packages.couchbase.com/releases/2.0.0/couchbase-server-community_x86_64_2.0.0.rpm
+
+rpm -i couchbase-server-*.rpm
+
+sleep 5
+
+/opt/couchbase/bin/couchbase-cli cluster-init -c 127.0.0.1 \
+  --cluster-init-username=Administrator \
+  --cluster-init-password=${COUCHBASE_REST_PASSWORD} \
+  --cluster-init-ramsize=${COUCHBASE_MAX_RAM_MB_PER_SERVER}
+
+/opt/couchbase/bin/couchbase-cli bucket-create -c 127.0.0.1 \
+  -u Administrator -p ${COUCHBASE_REST_PASSWORD} \
+  --bucket=default \
+  --bucket-type=couchbase \
+  --bucket-password= \
+  --bucket-ramsize=${COUCHBASE_MAX_RAM_MB_FOR_DEFAULT_BUCKET} \
+  --bucket-replica=${COUCHBASE_REPLICAS_FOR_DEFAULT_BUCKET}
+
+# At this point, visit http://$HOST:8091 for the Couchbase web console.
+
